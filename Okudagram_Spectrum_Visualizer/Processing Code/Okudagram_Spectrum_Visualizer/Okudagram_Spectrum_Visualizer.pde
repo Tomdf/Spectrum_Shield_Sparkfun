@@ -14,8 +14,9 @@
 import processing.serial.*;
 
 Serial myPort;        // The serial port
-int xPos = 124;         // bot horizontal position of the graph
 int graphTop = 323;         // top horizontal position of the graph
+int xPosLeft = 124;
+int xPosRight = 350;
 
 void setup () {
   // set the window size:
@@ -26,7 +27,7 @@ void setup () {
   // I know that the first port in the serial list on my mac
   // is always my  Arduino, so I open Serial.list()[0].
   // Open whatever port is the one you're using.
-  myPort = new Serial(this, Serial.list()[1], 9600);
+  myPort = new Serial(this, Serial.list()[1], 115200);
   // don't generate a serialEvent() unless you get a newline character:
   myPort.bufferUntil('\n');
   // set inital background:
@@ -49,25 +50,45 @@ void serialEvent (Serial myPort) {
     // resulting substrings into an integer array:
     float[] bands = float(split(inString, ","));
 
-    // if the array has at least fourteen elements, you know
+    // if the array has at least four-teen elements, you know
     // you got the whole thing.  Put the numbers in the
     // color variables:
     if (bands.length >=14) {
       for ( int i=0; i < 14; i++) {
         // convert to an int and map to the screen height:
-        bands[i] = map(bands[i], 0, 1023, 0, 255);
+        bands[i] = map(bands[i], 0, 1023, 0, 274);
+      }
+      for (int i=0; i < 7; i++) { 
+        // draw the line:
+        stroke(127, 34, 255);
+        strokeCap(SQUARE);
+        strokeWeight(28);
+        line(xPosLeft, graphTop, xPosLeft, graphTop - bands[i]);
+        stroke(0, 0, 0);
+        line(xPosLeft, 49, xPosLeft, graphTop - bands[i]);
+        if (i < 6) {
+          xPosLeft += 29;
+        }
+        else {
+          xPosLeft = 124;
+        }
+      }
+      for (int i=7; i < 14; i++) {
+        // draw the line:
+        stroke(127, 34, 255);
+        strokeCap(SQUARE);
+        strokeWeight(28);
+        line(xPosRight, graphTop, xPosRight, graphTop - bands[i]);
+        stroke(0, 0, 0);
+        // strokeWeight(5);
+        line(xPosRight, 49, xPosRight, graphTop - bands[i]);  
+        if (i < 13) {
+          xPosRight += 29;
+        }
+        else {
+          xPosRight = 350;
+        }
       }
     }
-
-
-      // draw the line:
-      stroke(127, 34, 255);
-      strokeCap(SQUARE);
-      strokeWeight(28);
-      line(xPos, graphTop, xPos, graphTop - inByte);
-      stroke(0, 0, 0);
-      // strokeWeight(5);
-      line(xPos, 49, xPos, graphTop - inByte);
-    }
   }
-
+}
