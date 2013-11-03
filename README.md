@@ -9,4 +9,4 @@ Written using Arduino IDE v1.0.5 and Processing v2.0.3 on Nov 3rd, 2013.
 
 **How to use this code**  
 1. Get a [Spectrum Sheild](https://www.sparkfun.com/products/10306) from Sparkfun as well as an Arduino Uno, plug the former into the latter.  
-2. Download all files and folders in this directory.  
+2. Download the 
