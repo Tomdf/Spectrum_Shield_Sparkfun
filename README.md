@@ -1,13 +1,13 @@
 Spectrum_Sheild_Sparkfun
 ========================
 
-**Code for Sparkfun's Arduino Audio Spectrum Sheild in the style of a TNG [Okudagram](http://en.wikipedia.org/wiki/LCARS).**  
+#### **Code for Sparkfun's Arduino Audio Spectrum Sheild in the style of a TNG [Okudagram](http://en.wikipedia.org/wiki/LCARS).**  
 Written using Arduino IDE v1.0.5 and Processing v2.0.3 on Nov 3rd, 2013.
 
 ![Okudagram Spectrum Sheild](http://i795.photobucket.com/albums/yy232/smolder_bucket/Sparkfun_Okudagram_Spectrum.png?t=1383486520)
 
 
-**How to use this code**  
+#### **How to use this code**  
 1. Get a [Spectrum Sheild](https://www.sparkfun.com/products/10306) from Sparkfun as well as an Arduino Uno, plug the former into the latter.  
 2. Download the files.
 3. Install the Arduino code onto the Uno. Leave the Uno connected to the computer.  
@@ -18,7 +18,7 @@ For example, when I plug in my Uno it shows up on COM5, but it is the second COM
 of the code. This number will vary depending on the amount of devices connected to your computer that are using a COM port.  
 7. Run the Processing code and the LCARS will open and immediately display a visualization of the sound being received by the sheild.  
 
-**How it works**  
+#### **How it works**  
 The Sparkfun Spectrum Sheild uses two MSGEQ7 graphic equalizer display filter ICs to sample the audio input,
 one IC for the left channel and another for the right. This IC takes seven samples of the input at different frequencies and 
 outputs a proportional amount of DC voltage via multiplexing. ( Tronixstuff.com explains this in a far saner fashion than I:
