@@ -25,5 +25,6 @@ outputs a proportional amount of DC voltage via multiplexing. ( Tronixstuff.com 
 http://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/)  
 
 The Arduino Uno analogReads the DC voltage of each of the fourteen samples (there are two ICs with seven bands each). 
-These values are then mapped and sent to the computer. Processing reads these values and uses them to draw lines representing each one.
-
+These values are then mapped and sent to the computer. Processing reads these values and uses them to draw lines representing
+each of the frequency bands for both channels. These lines are drawn on top of a static, PNG background which was created
+with Adobe Illustrator.
