@@ -13,10 +13,10 @@ Written using Arduino IDE v1.0.5 and Processing v2.0.3 on Nov 3rd, 2013.
 3. Install the Arduino code onto the Uno. Leave the Uno connected to the computer.  
 4. Plug an audio source (mp3 player, laptop, phone) into the shield's left plug. Set the source's volume to high.  
 5. Connect the shield's right plug to headphones or amplifier, prefably with volume control.  
-6. Open the Processing code and, if neccesary, change line 30 to the order number of the COM5 port your Uno appears on.
+6. Open the Processing code and, if neccesary, change line 30 to the order number of the COM port your Uno appears on.
 For example, when I plug in my Uno it shows up on COM5, but it is the second COM port in use so I enter "1" on line 30
 of the code. Why "1" for the second COM port instead of "2"? Because the computer starts counting at 0!
-This number will vary depending on the amount of devices connected to your computer that are using a COM port.  
+This number will vary depending on the amount of devices connected to your computer that are using ports.  
 7. Run the Processing code and the LCARS will open and immediately display a visualization of the sound being received by the shield.  
 
 #### **How it works**  
